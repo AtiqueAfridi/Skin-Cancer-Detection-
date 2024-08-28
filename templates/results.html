@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Cancer Detection - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('testimonials') }}">Testimonials</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Analysis Results</h1>
+        <p><strong>Patient Name:</strong> {{ patient.name }}</p>
+        <p><strong>Contact:</strong> {{ patient.contact }}</p>
+        <p><strong>Gender:</strong> {{ patient.gender }}</p>
+        <p><strong>Age:</strong> {{ patient.age }}</p>
+        <p><strong>Skin Type:</strong> {{ patient.skin_type }}</p>
+        <p><strong>Lesion Location:</strong> {{ patient.lesion_location }}</p>
+        <p><strong>Image Filename:</strong> {{ patient.image_filename }}</p>
+        <p><strong>Result:</strong> {{ result }}</p>
+        <p><strong>Confidence:</strong> {{ confidence }}</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Skin Cancer Detection. All rights reserved.</p>
+    </footer>
+</body>
+</html>

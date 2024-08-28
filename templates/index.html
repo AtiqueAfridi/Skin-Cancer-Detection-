@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Cancer Detection - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('testimonials') }}">Testimonials</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main>
+        <h1>Welcome to Skin Cancer Detection</h1>
+        <p>Our advanced technology helps detect potential skin cancer. Get started by filling out the form below.</p>
+
+        <div class="form-container">
+            <h2>Skin Cancer Detection Form</h2>
+            <form action="/submit" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required min="0" max="120">
+                </div>
+                <div class="form-group">
+                    <label for="skin_type">Skin Type:</label>
+                    <select id="skin_type" name="skin_type" required>
+                        <option value="">Select Skin Type</option>
+                        <option value="type1">Type I (Very Fair)</option>
+                        <option value="type2">Type II (Fair)</option>
+                        <option value="type3">Type III (Medium)</option>
+                        <option value="type4">Type IV (Olive)</option>
+                        <option value="type5">Type V (Brown)</option>
+                        <option value="type6">Type VI (Dark Brown to Black)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lesion_location">Lesion Location:</label>
+                    <input type="text" id="lesion_location" name="lesion_location" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Skin Cancer Detection. All rights reserved.</p>
+    </footer>
+</body>
+</html>
